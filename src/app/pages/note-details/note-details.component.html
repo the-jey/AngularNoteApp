@@ -1,0 +1,30 @@
+<div class="form-container">
+
+  <form #noteForm="ngForm" (ngSubmit)="onSubmit(noteForm)">
+
+    <div class="field">
+      <label for="title" class="label">Titre</label>
+      <div class="control">
+        <input type="text" required name="title" [ngModel]="note.title" class="input" id="title">
+      </div>
+    </div>
+    <br>
+    <div class="field">
+      <label for="body" class="label">Contenu</label>
+      <div class="control">
+        <textarea class="textarea" [ngModel]="note.body" name="body" id="body"></textarea>
+      </div>
+    </div>
+
+    <div class="field is-grouped is-pulled-right">
+      <div class="control">
+        <button class="button is-text" type="button" (click)="cancel()">Annuler</button>
+      </div>
+      <div class="control">
+        <button class="button is-info has-text-white" type="submit" [disabled]="!noteForm.valid">Sauvegarder</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
